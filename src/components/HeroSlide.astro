@@ -1,0 +1,90 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<!-- Hero slider + BG parallax -->
+<section class="jarallax bg-dark py-xxl-5" data-jarallax data-speed="0.4" data-bs-theme="dark">
+  <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-dark-translucent"></span>
+  <div class="jarallax-img" style="background-image: url(/assets/img/landing/software-agency-1/hero-bg.jpg);"></div>
+  <div class="position-relative text-center zindex-5 overflow-hidden pt-4 py-md-5">
+
+    <!-- Slider controls (Prev / next) -->
+    <button type="button" id="hero-prev" class="btn btn-prev btn-icon btn-xl bg-transparent shadow-none position-absolute top-50 start-0 translate-middle-y d-none d-md-inline-flex ms-n3 ms-lg-2" aria-label="Previous">
+      <i class="bx bx-chevron-left fs-1"></i>
+    </button>
+    <button type="button" id="hero-next" class="btn btn-next btn-icon btn-xl bg-transparent shadow-none position-absolute top-50 end-0 translate-middle-y d-none d-md-inline-flex me-n3 me-lg-2" aria-label="Next">
+      <i class="bx bx-chevron-right fs-1"></i>
+    </button>
+
+    <!-- Slider -->
+    <div class="container text-center py-xl-5">
+      <div class="row justify-content-center pt-lg-5">
+        <div class="col-xl-8 col-lg-9 col-md-10 col-11">
+          <div class="swiper pt-5 pb-4 py-md-5" data-swiper-options='{
+            "effect": "fade",
+            "speed": 500,
+            "autoplay": {
+              "delay": 5500,
+              "disableOnInteraction": false
+            },
+            "pagination": {
+              "el": ".swiper-pagination",
+              "clickable": true
+            },
+            "navigation": {
+              "prevEl": "#hero-prev",
+              "nextEl": "#hero-next"
+            }
+          }'>
+            <div class="swiper-wrapper">
+
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <h1 class="display-2 from-start mb-lg-4">{t('hero.slide1.title')}</h1>
+                <div class="from-end">
+                  <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">{t('hero.slide1.body')}</p>
+                </div>
+                <div class="scale-up delay-1">
+                  <a href="#contact" class="btn btn-primary shadow-primary btn-lg">{t('hero.slide1.cta')}</a>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <h2 class="display-2 from-start mb-lg-4">{t('hero.slide2.title')}</h2>
+                <div class="from-end">
+                  <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">{t('hero.slide2.body')}</p>
+                </div>
+                <div class="scale-up delay-1">
+                  <a href="#services" class="btn btn-primary shadow-primary btn-lg">{t('hero.slide2.cta')}</a>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <h2 class="display-2 from-start mb-lg-4">{t('hero.slide3.title')}</h2>
+                <div class="from-end">
+                  <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">{t('hero.slide3.body')}</p>
+                </div>
+                <div class="scale-up delay-1">
+                  <a href="#services" class="btn btn-primary shadow-primary btn-lg">{t('hero.slide3.cta')}</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination (bullets) -->
+            <div class="swiper-pagination position-relative d-md-none pt-2 mt-5"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container d-flex justify-content-end position-relative zindex-5 pb-5">
+    <a href="#services" class="nav-link px-0">
+      {t('nav.services')}
+      <i class="bx bx-right-arrow-circle fs-4 ms-2"></i>
+    </a>
+  </div>
+</section>

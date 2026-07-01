@@ -1,0 +1,122 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<!-- Contact form -->
+<section id="contact" class="container">
+  <div class="bg-secondary rounded-3 py-5 px-3 px-sm-4 px-lg-0">
+    <div class="row align-items-center pt-1 pb-2 py-lg-4">
+      <div class="col-xl-4 col-lg-5 col-md-6 offset-lg-1 mb-4 pb-3 mb-md-0 pb-md-0">
+        <h2 class="h1 mb-lg-4">{t('contact.title')}</h2>
+        <p class="pb-2 pb-md-4 pb-lg-5">{t('contact.intro')}</p>
+        <h3 class="mb-lg-4">{t('contact.info.title')}</h3>
+        <ul class="list-unstyled pb-3 pb-md-4 pb-lg-5 mb-2">
+          <li class="mb-2">
+            <a href="mailto:info@mugenjiyustudio.com" class="nav-link d-flex align-items-center p-0">
+              <i class="bx bx-envelope fs-xl text-primary me-2"></i>
+              info@mugenjiyustudio.com
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-5 col-md-6 offset-xl-1">
+        <div class="card border-0 shadow-sm p-sm-2">
+
+          <!-- Form -->
+          <div id="contact-form-wrapper" class="card-body">
+            <form
+              id="contact-form"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              class="needs-validation"
+              novalidate
+            >
+              <input type="hidden" name="form-name" value="contact">
+              <div class="mb-4">
+                <label for="service" class="form-label fs-base">{t('contact.form.service.label')}</label>
+                <select id="service" name="service" class="form-select form-select-lg" required>
+                  <option value="" selected disabled>{t('contact.form.service.placeholder')}</option>
+                  <option value="cms">{t('contact.form.service.opt1')}</option>
+                  <option value="headless">{t('contact.form.service.opt2')}</option>
+                  <option value="ai">{t('contact.form.service.opt3')}</option>
+                  <option value="pa">{t('contact.form.service.opt4')}</option>
+                </select>
+                <div class="invalid-feedback">{t('contact.form.service.error')}</div>
+              </div>
+              <div class="mb-4">
+                <label for="name" class="form-label fs-base">{t('contact.form.name.label')}</label>
+                <input type="text" id="name" name="name" class="form-control form-control-lg" required>
+                <div class="invalid-feedback">{t('contact.form.name.error')}</div>
+              </div>
+              <div class="mb-4">
+                <label for="email" class="form-label fs-base">{t('contact.form.email.label')}</label>
+                <input type="email" id="email" name="email" class="form-control form-control-lg" required>
+                <div class="invalid-feedback">{t('contact.form.email.error')}</div>
+              </div>
+              <div class="mb-4 pb-2">
+                <label for="message" class="form-label fs-base">{t('contact.form.message.label')}</label>
+                <textarea id="message" name="message" class="form-control form-control-lg" rows="3" placeholder={t('contact.form.message.placeholder')} required></textarea>
+                <div class="invalid-feedback">{t('contact.form.message.error')}</div>
+              </div>
+              <div id="contact-error" class="alert alert-danger d-none mb-4" role="alert">
+                {t('contact.form.error')}
+              </div>
+              <button type="submit" class="btn btn-primary shadow-primary btn-lg">{t('contact.form.submit')}</button>
+            </form>
+          </div>
+
+          <!-- Success state -->
+          <div id="contact-success" class="card-body text-center py-5 d-none">
+            <i class="bx bx-check-circle text-success mb-3 d-block" style="font-size: 4rem;"></i>
+            <h3 class="mb-3">{t('contact.form.success.title')}</h3>
+            <p class="text-muted mb-0">{t('contact.form.success.body')}</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+      }
+
+      var submitBtn = form.querySelector('[type="submit"]');
+      var errorEl = document.getElementById('contact-error');
+      submitBtn.disabled = true;
+      errorEl.classList.add('d-none');
+
+      try {
+        var response = await fetch(window.location.pathname, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString(),
+        });
+
+        if (response.ok) {
+          document.getElementById('contact-form-wrapper').classList.add('d-none');
+          document.getElementById('contact-success').classList.remove('d-none');
+        } else {
+          errorEl.classList.remove('d-none');
+          submitBtn.disabled = false;
+        }
+      } catch (err) {
+        errorEl.classList.remove('d-none');
+        submitBtn.disabled = false;
+      }
+    });
+  })();
+</script>

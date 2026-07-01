@@ -1,0 +1,31 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<!-- About -->
+<section id="about" class="container py-5 my-1 my-md-4 my-lg-5">
+  <div class="row">
+    <div class="col-lg-7 mb-4 mb-lg-0">
+      <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+        <h2 class="h1 mb-4">{t('about.title')}</h2>
+        <p class="fs-lg mb-0">{t('about.body')}</p>
+      </div>
+    </div>
+    <div class="col-lg-5 col-xl-4 offset-xl-1 border-start-lg">
+      <div class="ps-lg-4 ms-lg-3">
+        <h3 class="h5 d-flex align-items-center">
+          <i class="bx bx-help-circle text-primary fs-4 me-2"></i>
+          {t('about.problem.title')}
+        </h3>
+        <p class="pb-4 mb-0 mb-lg-3">{t('about.problem.body')}</p>
+        <h3 class="h5 d-flex align-items-center">
+          <i class="bx bx-bulb text-primary fs-4 me-2"></i>
+          {t('about.approach.title')}
+        </h3>
+        <p class="mb-0">{t('about.approach.body')}</p>
+      </div>
+    </div>
+  </div>
+</section>

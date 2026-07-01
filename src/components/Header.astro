@@ -1,0 +1,51 @@
+---
+import { getLangFromUrl, useTranslations, getHomeUrl } from '../i18n/utils';
+import { languages } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const homeUrl = getHomeUrl(lang);
+---
+<!-- Navbar -->
+<header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href={homeUrl} class="navbar-brand pe-3 d-flex align-items-center">
+            <img src="/assets/img/mugenjiyustudio_logo.svg" width="300" height="77" alt="Mugen Jiyu Studio">
+        </a>
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav"
+            aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end mt-3 mt-lg-0" id="primaryNav">
+            <ul class="navbar-nav align-items-lg-center gap-lg-4 mb-0">
+                <li class="nav-item">
+                    <a href={homeUrl} class="nav-link">{t('nav.home')}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">{t('nav.services')}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">{t('nav.about')}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="btn btn-primary px-4">{t('nav.contact')}</a>
+                </li>
+
+                <!-- Language switcher -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center gap-1 px-0" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bx bx-globe fs-xl"></i>
+                        <span class="text-uppercase">{lang}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a href="/" class={`dropdown-item ${lang === 'en' ? 'active' : ''}`}>{languages.en}</a></li>
+                        <li><a href="/it/" class={`dropdown-item ${lang === 'it' ? 'active' : ''}`}>{languages.it}</a></li>
+                        <li><a href="/ja/" class={`dropdown-item ${lang === 'ja' ? 'active' : ''}`}>{languages.ja}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

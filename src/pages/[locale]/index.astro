@@ -1,0 +1,29 @@
+---
+import { languages, defaultLang } from '../../i18n/ui';
+import MainLayout from "../../layout/MainLayout.astro";
+import OurServices from "../../components/OurServices.astro";
+import Features from "../../components/Features.astro";
+import HeroSlide from "../../components/HeroSlide.astro";
+import About from "../../components/About.astro";
+import Industries from "../../components/Industries.astro";
+import Benefits from "../../components/Benefits.astro";
+import Solutions from "../../components/Solutions.astro";
+import ContactForm from "../../components/ContactForm.astro";
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter(lang => lang !== defaultLang)
+    .map(lang => ({ params: { locale: lang } }));
+}
+---
+
+<MainLayout>
+    <HeroSlide/>
+    <OurServices/>
+    <About/>
+    <Features/>
+    <Industries/>
+    <Benefits />
+    <Solutions />
+    <ContactForm />
+</MainLayout>

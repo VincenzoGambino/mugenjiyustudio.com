@@ -1,0 +1,117 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<!-- Our Services -->
+<section id="services" class="container my-5 py-lg-5 py-md-4 pt-2 pb-3">
+    <h2 class="h1 mb-md-5 mb-4 py-xl-3 pb-lg-2 pb-md-0 pb-sm-2 text-center">{t('services.title')}</h2>
+
+    <!-- CMS Development -->
+    <div class="row gy-4 mb-5 pb-xl-5 pb-md-4 pb-3">
+        <div class="col-lg-5 col-md-6 order-md-1 order-2 d-flex rellax" data-rellax-percentage="0.5"
+             data-rellax-speed="-0.5" data-disable-parallax-down="md">
+            <div class="align-self-center pe-lg-0 pe-md-4">
+                <h3 class="mb-md-4">{t('services.cms.title')}</h3>
+                <p class="mb-md-4 mb-3 fs-lg">{t('services.cms.body')}</p>
+                <hr class="my-md-4 my-3">
+                <ul class="list-unstyled d-flex flex-wrap mt-md-n3 mt-n2 ms-md-n4 ms-n3 mb-0 pb-lg-4 pb-md-2 fw-bold">
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.cms.tag1')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.cms.tag2')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.cms.tag3')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.cms.tag4')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.cms.tag5')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.cms.tag6')}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 offset-lg-1 order-md-2 order-1 rellax" data-rellax-percentage="0.5"
+             data-rellax-speed="0.5" data-disable-parallax-down="md">
+            <div class="bg-secondary rounded-3">
+                <img src="/assets/img/home/cms.png" width="1415" height="1112" alt="CMS development services" class="d-dark-mode-none d-block">
+                <img src="/assets/img/home/cms.png" width="1415" height="1112" alt="CMS development services" class="d-dark-mode-block d-none">
+            </div>
+        </div>
+    </div>
+
+    <!-- Headless -->
+    <div class="row gy-4 mb-5 pb-xl-5 pb-md-4 pb-3">
+        <div class="col-lg-5 col-md-6 offset-lg-1 order-md-2 order-2 d-flex rellax" data-rellax-percentage="0.5"
+             data-rellax-speed="-0.5" data-disable-parallax-down="md">
+            <div class="align-self-center pe-lg-0 pe-md-4">
+                <h3 class="mb-md-4">{t('services.headless.title')}</h3>
+                <p class="mb-md-4 mb-3 fs-lg">{t('services.headless.body')}</p>
+                <hr class="my-md-4 my-3">
+                <ul class="list-unstyled d-flex flex-wrap mt-md-n3 mt-n2 ms-md-n4 ms-n3 mb-0 pb-lg-4 pb-md-2 fw-bold">
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.headless.tag1')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.headless.tag2')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.headless.tag3')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.headless.tag4')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.headless.tag5')}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 order-md-1 order-1 rellax" data-rellax-percentage="0.5"
+             data-rellax-speed="0.5" data-disable-parallax-down="md">
+            <div class="bg-secondary rounded-3">
+                <img src="/assets/img/home/headless.png" width="1415" height="1112" alt="Headless web development" class="d-dark-mode-none d-block">
+                <img src="/assets/img/home/headless.png" width="1415" height="1112" alt="Headless web development" class="d-dark-mode-block d-none">
+            </div>
+        </div>
+    </div>
+
+    <!-- Artificial Intelligence -->
+    <div class="row gy-4 mb-5 pb-xl-5 pb-md-4 pb-3">
+        <div class="col-lg-5 col-md-6 order-md-1 order-2 d-flex rellax" data-rellax-percentage="0.5"
+             data-rellax-speed="-0.5" data-disable-parallax-down="md">
+            <div class="align-self-center pe-lg-0 pe-md-4">
+                <h3 class="mb-md-4">{t('services.ai.title')}</h3>
+                <p class="mb-md-4 mb-3 fs-lg">{t('services.ai.body')}</p>
+                <hr class="my-md-4 my-3">
+                <ul class="list-unstyled d-flex flex-wrap mt-md-n3 mt-n2 ms-md-n4 ms-n3 mb-0 pb-lg-4 pb-md-2 fw-bold">
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.ai.tag1')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.ai.tag2')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.ai.tag3')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.ai.tag4')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.ai.tag5')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.ai.tag6')}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 offset-lg-1 order-md-2 order-1 rellax" data-rellax-percentage="0.5"
+             data-rellax-speed="0.5" data-disable-parallax-down="md">
+            <div class="bg-secondary rounded-3">
+                <img src="/assets/img/home/ai.png" width="1415" height="1112" alt="Artificial intelligence integration services" class="d-dark-mode-none d-block">
+                <img src="/assets/img/home/ai.png" width="1415" height="1112" alt="Artificial intelligence integration services" class="d-dark-mode-block d-none">
+            </div>
+        </div>
+    </div>
+
+    <!-- Public Administration with Drupal -->
+    <div class="row gy-4 mb-xl-3">
+        <div class="col-lg-5 col-md-6 offset-lg-1 order-md-2 order-2 d-flex rellax" data-rellax-percentage="0.5"
+             data-rellax-speed="-0.5" data-disable-parallax-down="md">
+            <div class="align-self-center pe-lg-0 pe-md-4">
+                <h3 class="mb-md-4">{t('services.pa.title')}</h3>
+                <p class="mb-md-4 mb-3 fs-lg">{t('services.pa.body')}</p>
+                <hr class="my-md-4 my-3">
+                <ul class="list-unstyled d-flex flex-wrap mt-md-n3 mt-n2 ms-md-n4 ms-n3 mb-0 pb-lg-4 pb-md-2 fw-bold">
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.pa.tag1')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.pa.tag2')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.pa.tag3')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.pa.tag4')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.pa.tag5')}</li>
+                    <li class="mt-md-3 mt-2 ms-md-4 ms-3">{t('services.pa.tag6')}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 order-md-1 order-1 rellax" data-rellax-percentage="0.5"
+             data-rellax-speed="0.5" data-disable-parallax-down="md">
+            <div class="bg-secondary rounded-3">
+                <img src="/assets/img/home/cms.png" width="1415" height="1112" alt="Drupal for public administration" class="d-dark-mode-none d-block">
+                <img src="/assets/img/home/cms.png" width="1415" height="1112" alt="Drupal for public administration" class="d-dark-mode-block d-none">
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,69 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<!-- Solutions -->
+<section class="container mb-5 pb-lg-5 pb-md-4 pb-3">
+  <h2 class="h1 mb-lg-5 mb-4 pb-lg-0 pb-md-2 text-center">{t('solutions.title')}</h2>
+
+  <div class="swiper mb-xl-3" data-swiper-options='{
+    "spaceBetween": 24,
+    "breakpoints": {
+      "0": { "slidesPerView": 1 },
+      "500": { "slidesPerView": 2 },
+      "768": { "slidesPerView": 3 },
+      "1200": { "slidesPerView": 4 }
+    },
+    "pagination": {
+      "el": ".swiper-pagination",
+      "clickable": true
+    }
+  }'>
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide h-auto">
+        <div class="card h-100">
+          <div class="card-body my-md-5 my-4 py-xl-2 py-md-0 py-sm-2 text-center">
+            <img src="/assets/img/landing/software-agency-3/icons/01.svg" width="40" height="40" alt="Icon" class="d-block mb-3 mx-auto">
+            <h3 class="h5 mb-3">{t('solutions.step1.title')}</h3>
+            <p class="mb-0">{t('solutions.step1.body')}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-auto">
+        <div class="card h-100">
+          <div class="card-body my-md-5 my-4 py-xl-2 py-md-0 py-sm-2 text-center">
+            <img src="/assets/img/landing/software-agency-3/icons/02.svg" width="40" height="40" alt="Icon" class="d-block mb-3 mx-auto">
+            <h3 class="h5 mb-3">{t('solutions.step2.title')}</h3>
+            <p class="mb-0">{t('solutions.step2.body')}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-auto">
+        <div class="card h-100">
+          <div class="card-body my-md-5 my-4 py-xl-2 py-md-0 py-sm-2 text-center">
+            <img src="/assets/img/landing/software-agency-3/icons/03.svg" width="40" height="40" alt="Icon" class="d-block mb-3 mx-auto">
+            <h3 class="h5 mb-3">{t('solutions.step3.title')}</h3>
+            <p class="mb-0">{t('solutions.step3.body')}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-auto">
+        <div class="card h-100">
+          <div class="card-body my-md-5 my-4 py-xl-2 py-md-0 py-sm-2 text-center">
+            <img src="/assets/img/landing/software-agency-3/icons/04.svg" width="40" height="40" alt="Icon" class="d-block mb-3 mx-auto">
+            <h3 class="h5 mb-3">{t('solutions.step4.title')}</h3>
+            <p class="mb-0">{t('solutions.step4.body')}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
+  </div>
+</section>

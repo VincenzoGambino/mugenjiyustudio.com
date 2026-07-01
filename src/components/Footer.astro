@@ -1,0 +1,56 @@
+---
+import { getLangFromUrl, useTranslations, getHomeUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const homeUrl = getHomeUrl(lang);
+---
+<!-- Footer -->
+<footer class="footer pt-5 pb-4 pb-lg-5">
+    <div class="container pt-lg-4">
+        <div class="row pb-5 align-items-start">
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <a href={homeUrl} class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4 d-block">
+                    <img src="/assets/img/mugenjiyustudio_logo.svg" width="160" height="69" alt="Mugen Jiyu Studio">
+                </a>
+                <p class="fs-sm text-body">{t('footer.tagline')}</p>
+            </div>
+            <div class="col-lg-3 col-md-3 offset-lg-1 mb-4 mb-md-0">
+                <h3 class="h6 mb-3">{t('footer.nav.title')}</h3>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a href="#services" class="nav-link px-0 pt-0 pb-2">{t('nav.services')}</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link px-0 pt-0 pb-2">{t('nav.about')}</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link px-0 pt-0 pb-2">{t('nav.contact')}</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <h3 class="h6 mb-3">{t('footer.contact.title')}</h3>
+                <address class="fs-sm text-body" style="font-style: normal;">
+                    <a href="mailto:info@mugenjiyustudio.com" class="d-flex align-items-center text-decoration-none mb-2">
+                        <i class="bx bx-envelope text-primary me-2"></i>
+                        info@mugenjiyustudio.com
+                    </a>
+                </address>
+            </div>
+        </div>
+        <div class="border-top pt-4">
+            <p class="fs-xs text-body mb-0">© {new Date().getFullYear()} Mugen Jiyu Studio. {t('footer.copyright')}</p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Back to top button -->
+<a href="#top" class="btn-scroll-top" data-scroll aria-label="Scroll to top">
+    <span class="btn-scroll-top-tooltip text-body fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+
+
+<!-- Vendor Scripts -->
+<script is:inline src="/assets/vendor/rellax/rellax.min.js" defer></script>
+<script is:inline src="/assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+
+<!-- Main Theme Script -->
+<script is:inline src="/assets/js/theme.min.js" defer></script>

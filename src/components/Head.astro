@@ -1,0 +1,102 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const langs = ['en', 'it', 'ja'] as const;
+type Lang = typeof langs[number];
+const lang = getLangFromUrl(Astro.url) as Lang;
+const t = useTranslations(lang);
+
+const ogLocaleMap: Record<Lang, string> = { en: 'en_GB', it: 'it_IT', ja: 'ja_JP' };
+
+const site = 'https://mugenjiyustudio.com';
+const normalizedRest = Astro.url.pathname.replace(/^\/(en|it|ja)(?=\/|$)/, '') || '/';
+const canonical = `${site}${lang === 'en' ? '' : '/' + lang}${normalizedRest}`;
+const alternates = (langs as readonly Lang[]).map((l) => ({ l, href: `${site}${l === 'en' ? '' : '/' + l}${normalizedRest}` }));
+---
+
+<head>
+    <meta charset="utf-8">
+    <title>{t('site.title')}</title>
+
+    <!-- Preconnect & Preload Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/assets/vendor/boxicons/fonts/boxicons.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/img/landing/software-agency-1/hero-bg.jpg" as="image" type="image/jpeg" fetchpriority="high">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+    </noscript>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content={t('site.description')}>
+    <meta name="keywords" content="CMS development, Drupal development, headless CMS, Next.js development, Sanity CMS, AI integration, LLM integration, web agency, artificial intelligence, RAG systems, workflow automation">
+    <meta name="author" content="Mugen Jiyu Studio">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={canonical}>
+    <meta property="og:title" content={t('site.title')}>
+    <meta property="og:description" content={t('site.description')}>
+    <meta property="og:image" content="https://mugenjiyustudio.com/assets/img/og-image.png">
+    <meta property="og:locale" content={ogLocaleMap[lang]}>
+    {alternates
+      .filter((a) => a.l !== lang)
+      .map((a) => <meta property="og:locale:alternate" content={ogLocaleMap[a.l as Lang]} />)}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={t('site.title')}>
+    <meta name="twitter:description" content={t('site.description')}>
+    <meta name="twitter:image" content="https://mugenjiyustudio.com/assets/img/og-image.png">
+
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href={canonical}>
+    {alternates.map((a) => (
+      <link rel="alternate" hreflang={a.l} href={a.href} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={alternates.find(a => a.l === 'en')?.href}>
+
+    <!-- Favicon and Touch Icons-->
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" href="/assets/vendor/boxicons/css/boxicons.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="/assets/vendor/boxicons/css/boxicons.min.css">
+    </noscript>
+    <link rel="stylesheet" media="screen" href="/assets/vendor/swiper/swiper-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="/assets/css/theme.min.css">
+
+    <!-- Page loading styles -->
+
+    <!-- Structured Data -->
+    <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Mugen Jiyu Studio",
+      "url": "https://mugenjiyustudio.com",
+      "email": "info@mugenjiyustudio.com",
+      "logo": "https://mugenjiyustudio.com/assets/img/mugenjiyustudio_logo.svg",
+      "description": "Agenzia web specializzata in sviluppo CMS, architettura headless e integrazione AI.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CMS Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Headless Websites & Applications" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Artificial Intelligence Integration" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pubblica Amministrazione con Drupal" } }
+        ]
+      }
+    }
+    </script>
+</head>

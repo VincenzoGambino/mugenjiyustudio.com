@@ -309,7 +309,10 @@ export const ui = {
     'footer.copyright': 'Tutti i diritti riservati.',
   },
 
-  ja: {
+  // Corrected `ja` block — paste over the existing `ja: { ... },` in your ui.ts
+// All fixes noted in review applied; everything else left verbatim.
+
+ja: {
     // NAV
     'nav.home': 'ホーム',
     'nav.services': 'サービス',
@@ -327,7 +330,7 @@ export const ui = {
     'hero.slide2.title': '実際のビジネス価値を生み出すAI',
     'hero.slide2.body': '自律型エージェント、セマンティック検索、プライベートAIの導入まで——お客様のプロセスに合わせた実践的なAIソリューションを、完全なデータ管理のもとで構築します。',
     'hero.slide2.cta': 'AIサービスを見る',
-    'hero.slide3.title': 'コンテンツの自由、パフォーマンスの妥協なし',
+    'hero.slide3.title': 'コンテンツは自由に、パフォーマンスは妥協なく',
     'hero.slide3.body': 'エンタープライズCMSからNext.js・AstroによるJAMstackフロントエンドまで——長期的に持続し、スケールし、配信チャネルに適応するデジタルアーキテクチャを設計します。',
     'hero.slide3.cta': 'サービスを見る',
 
@@ -357,7 +360,7 @@ export const ui = {
     'services.ai.tag5': 'LLM統合',
     'services.ai.tag6': '生成AI',
     'services.pa.title': '行政機関向けDrupal',
-    'services.pa.body': 'イタリアの公共機関、自治体、行政組織のDrupalによる機関ポータルのデジタル化を支援します。国家デザインシステム（Design System Italia）に準拠し、WCAG 2.1 AAアクセシビリティに対応、SPIDとCIEデジタルIDと統合されたAgIDガイドライン準拠のソリューションを提供します。',
+    'services.pa.body': 'イタリアの公共機関、自治体、行政組織による機関ポータルのデジタル化を、Drupalで支援します。国家デザインシステム（Design System Italia）に準拠し、WCAG 2.1 AAのアクセシビリティ基準に対応、SPID・CIEデジタルIDとの連携を備えた、AgIDガイドラインに沿ったソリューションを提供します。',
     'services.pa.tag1': '行政向けDrupal',
     'services.pa.tag2': 'Design System Italia',
     'services.pa.tag3': 'SPID・CIE',
@@ -369,29 +372,29 @@ export const ui = {
     'about.title': '私たちについて',
     'about.body': 'Mugen Jiyu Studioは、CMS開発、ヘッドレスアーキテクチャ、人工知能に特化したデジタルスタジオです。単なるベンダーではなく、信頼できる技術パートナーを求める企業と共に働きます。レガシーシステムのモダナイゼーションからAI導入まで、具体的な専門知識とビジネス目標を起点としたアプローチで、長期的に成長できるプラットフォームを構築します。',
     'about.problem.title': '課題',
-    'about.problem.body': '多くの企業が、チームの生産性を低下させ、技術的負債を蓄積し、デジタル市場の機会に対応できない古いプラットフォームで運営しています。',
+    'about.problem.body': '多くの企業が、チームの生産性を低下させ、技術的負債を蓄積し、デジタル市場の機会に対応できない、旧式のプラットフォームを使い続けています。',
     'about.approach.title': '私たちのアプローチ',
     'about.approach.body': 'チームが実際に使えるモダンなソリューションを構築します——エンタープライズCMS、カスタムAI統合、ヘッドレスアプリケーション、いずれも技術ではなくビジネス目標から出発します。',
 
     // FEATURES
     'features.title': 'なぜMugen Jiyu Studioなのか',
-    'features.card1.title': '市場に合った技術',
+    'features.card1.title': 'プロジェクトに合った技術選定',
     'features.card1.body': 'Drupal、Next.js、Sanity、Astro、AIなど、実績ある最新ツールを——トレンドではなく、プロジェクトのニーズに基づいて選択します。',
     'features.card2.title': '成果へのフォーカス',
     'features.card2.body': 'すべての技術的意思決定はビジネス目標によって導かれます。構築することが目的ではなく、具体的なインパクトで成功を測ります。',
     'features.card3.title': '納期の信頼性',
-    'features.card3.body': '現実的なスケジュールを設定し、それを守ります。プロジェクトは予測可能に進み、直前の驚きやスコープの拡散はありません。',
+    'features.card3.body': '現実的なスケジュールを設定し、それを守ります。プロジェクトは予測可能に進み、土壇場での想定外やスコープの肥大化はありません。',
     'features.card4.title': '直接的な専門知識',
-    'features.card4.body': '実際にプロダクトを構築している人々と直接働きます。仲介者なし——技術チームが初日から関与します。',
+    'features.card4.body': '実際にプロダクトを開発するメンバーと直接やり取りいただけます。仲介者はいません——技術チームが初日から深く関わります。',
     'features.ai.title': 'AIの強み',
     'features.ai.card1.title': 'AIエージェント',
-    'features.ai.card1.body': '推論し、意思決定し、行動できる自律型エージェントを開発——反復的・大量処理業務をチームから解放します。',
+    'features.ai.card1.body': '推論し、意思決定し、行動できる自律型エージェントを開発——チームを大量の反復的な業務から解放します。',
     'features.ai.card2.title': 'プライベートAI',
     'features.ai.card2.body': 'AIモデルをお客様のインフラに直接展開——ビジネスデータの完全な機密性とデータ保護規制への準拠を確保します。',
     'features.ai.card3.title': 'セマンティック検索',
-    'features.ai.card3.body': 'ドキュメントアーカイブを照会可能なナレッジベースに変えるRAGシステムを構築——自社データに基づいた正確で文脈に合った回答。',
+    'features.ai.card3.body': 'ドキュメントアーカイブを照会可能なナレッジベースに変えるRAGシステムを構築——自社データに基づいた、正確で文脈に合った回答を提供します。',
     'features.ai.card4.title': 'プロセス自動化',
-    'features.ai.card4.body': '既存のツールにAIを接続し、ワークフローを自動化——チームに貴重な時間を取り戻します。',
+    'features.ai.card4.body': '既存のツールにAIを接続し、ワークフローを自動化——チームの貴重な時間を取り戻します。',
 
     // INDUSTRIES
     'industries.title': '対応業界',
@@ -400,22 +403,22 @@ export const ui = {
     'industries.tab.ecommerce': 'Eコマース',
     'industries.tab.medtech': 'メドテック',
     'industries.education.title': '教育',
-    'industries.education.body': '大学、研修機関、eラーニングプラットフォームは、信頼性の高いスケーラブルなコンテンツシステム構築を私たちに依頼しています。学生ポータルやコースカタログから多言語パブリッシングまで、編集チームが直感的に使えるCMSを提供します。',
+    'industries.education.body': '大学、研修機関、eラーニングプラットフォームが、信頼性が高くスケーラブルなコンテンツシステムの構築で私たちを頼りにしています。学生ポータルやコースカタログから多言語パブリッシングまで、編集チームが直感的に使える強力なCMSを提供します。',
     'industries.startup.title': 'スタートアップ・テクノロジー',
     'industries.startup.body': 'スタートアップは技術的負債を蓄積せずに素早く動く必要があります。テクノロジー企業が堅固なヘッドレスインフラを構築し、AI機能を統合し、プロダクトと並行してコンテンツシステムをスケールできるよう支援します。',
     'industries.ecommerce.title': 'Eコマース',
-    'industries.ecommerce.body': 'コンテンツ管理とオンラインストアを分離する高速で柔軟なヘッドレスコマース体験を構築。モノリシックプラットフォームの制約なく、パフォーマンス、パーソナライゼーション、マルチチャネル販売を完全に制御できます。',
+    'industries.ecommerce.body': 'コンテンツ管理とオンラインストアを分離する、高速で柔軟なヘッドレスコマース体験を構築します。モノリシックプラットフォームの制約を受けることなく、パフォーマンス、パーソナライゼーション、マルチチャネル販売をより自在にコントロールできます。',
     'industries.medtech.title': 'メドテック',
-    'industries.medtech.body': '医療技術分野には、安全で規制に準拠したインテリジェントなプラットフォームが必要です。臨床データパイプラインから患者向け情報システムまで、プライバシーとアクセシビリティを最初から組み込んでAIをヘルスケアに統合します。',
+    'industries.medtech.body': '医療技術分野には、安全で規制に準拠したインテリジェントなプラットフォームが必要です。臨床データパイプラインから患者向け情報システムまで、プライバシーとアクセシビリティを最初から組み込んで、AIをヘルスケアに統合します。',
 
     // BENEFITS
     'benefits.title': '私たちの強み',
     'benefits.card1.title': '24時間でプロトタイプ',
     'benefits.card1.body': 'アイデアを共有してください。24時間以内に、本番コードを1行も書く前に、検討できる動作するプロトタイプをお届けします。',
     'benefits.card2.title': '2週間でMVP',
-    'benefits.card2.body': '品質を犠牲にせずにプロジェクトを迅速に本番環境へ。ほとんどの場合、キックオフから2週間以内にMVPが公開されます。',
+    'benefits.card2.body': '品質を犠牲にせずに、プロジェクトを迅速に本番環境へ。ほとんどの場合、キックオフから2週間以内にMVPが公開されます。',
     'benefits.card3.title': '即時スタート',
-    'benefits.card3.body': '長いオンボーディングや何週間もの調整は不要です。最初の通話から動き出します——明確な目標、共有された優先事項、初日から実際の作業。',
+    'benefits.card3.body': '長いオンボーディングや何週間もの調整は不要です。初回のミーティングからすぐに動き出します——明確な目標と共有された優先事項のもと、初日から具体的な作業を進めます。',
     'benefits.card4.title': '継続的サポート',
     'benefits.card4.body': 'オフィスアワーだけでなく、必要な時に対応します。技術的な緊急事態には、いつでも頼ることができます。',
 
@@ -432,7 +435,7 @@ export const ui = {
 
     // CONTACT
     'contact.title': 'お問い合わせ',
-    'contact.intro': '開発したいプロジェクトがありますか？直接ご連絡いただくか、フォームにご記入ください——24時間以内にご返答します。',
+    'contact.intro': '開発したいプロジェクトがある方も、私たちに何ができるかをまず知りたい方も、直接ご連絡いただくかフォームにご記入ください——24時間以内にご返答します。',
     'contact.info.title': '連絡先',
     'contact.form.service.label': 'サービス',
     'contact.form.service.placeholder': 'ご興味のあるサービスを選択してください',
@@ -440,16 +443,16 @@ export const ui = {
     'contact.form.service.opt2': 'ヘッドレスサイト・アプリケーション',
     'contact.form.service.opt3': '人工知能',
     'contact.form.service.opt4': '行政機関向けサービス',
-    'contact.form.service.error': 'サービスを選択してください！',
+    'contact.form.service.error': 'サービスを選択してください。',
     'contact.form.name.label': 'お名前',
-    'contact.form.name.error': 'お名前を入力してください！',
+    'contact.form.name.error': 'お名前を入力してください。',
     'contact.form.email.label': 'メールアドレス',
-    'contact.form.email.error': '有効なメールアドレスを入力してください！',
+    'contact.form.email.error': '有効なメールアドレスを入力してください。',
     'contact.form.message.label': 'メッセージ',
     'contact.form.message.placeholder': 'プロジェクトや直面している課題についてお聞かせください',
-    'contact.form.message.error': 'メッセージを入力してください！',
+    'contact.form.message.error': 'メッセージを入力してください。',
     'contact.form.submit': '送信する',
-    'contact.form.success.title': '送信完了！',
+    'contact.form.success.title': '送信完了',
     'contact.form.success.body': 'お問い合わせありがとうございます。24時間以内にご連絡いたします。',
     'contact.form.error': 'エラーが発生しました。もう一度お試しいただくか、直接メールをお送りください。',
 
